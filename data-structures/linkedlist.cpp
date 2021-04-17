@@ -62,8 +62,8 @@ class LinkedList{
 				}
 				current = current->next;
 			}
+			cout << endl;
 		}
-
 };
 
 int main(int argc, char*argv[]){
@@ -80,5 +80,22 @@ int main(int argc, char*argv[]){
 
 	test.display();
 
+	cout << test.size() << endl;
+
+	LinkedList<int> nums;
+
+	cout << nums.size() << endl;
+
+	nums.add(43);
+	nums.add(83);
+	nums.add(31);
+	nums.add(91);
+	nums.add(53);
+	nums.add(38);
+	nums.add(11);
+
+	nums.display();
+
+	cout << nums.size() << endl;
 	return 0;
 }
