@@ -1,7 +1,7 @@
 # Data Structures and Algorithms 
 
 # Introduction
- In computer science, data structures and algorithms is an extremely topic to learn and is most often separates a good programmer from a great one. Admittedly, I am far from the latter, but hopefully this project helps both you and me learn a lot.
+ In computer science, data structures and algorithms is an extremely topic useful to learn and is most often separates a good programmer from a great one. Admittedly, I am far from the latter, but hopefully this project helps both you and me learn a lot.
 
  ## What will this repository contain?
 
