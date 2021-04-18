@@ -64,13 +64,34 @@ class LinkedList{
 			}
 			cout << endl;
 		}
+
+		void remove(const T& data){
+			// Removes element based on data on first occurance
+			Node<T>* current = head;
+			Node<T>* previous = head;
+
+			// If in case that current pointer is pointing at data to be removed
+			if(current->data == data){
+				head = current->next;
+			} else {
+				while(previous->next->data != data){
+					if(previous->next->next == NULL) throw out_of_range("Node not in list.");
+					previous = previous->next;
+				}
+
+				current = previous->next;
+				previous->next = current->next;
+			}
+
+			// Deallocate memory of deleted node
+			free(current);
+			current = NULL;
+		}
 };
 
 int main(int argc, char*argv[]){
 
 	LinkedList<string> test;
-
-	cout << test.size() << endl;
 
 	test.add("Mike");
 	test.add("Robin");
@@ -80,11 +101,16 @@ int main(int argc, char*argv[]){
 
 	test.display();
 
-	cout << test.size() << endl;
+	string name;
+
+	// cout << "Enter a name: ";
+	// cin >> name; 
+
+	// test.add(name);
+
+	test.display();
 
 	LinkedList<int> nums;
-
-	cout << nums.size() << endl;
 
 	nums.add(43);
 	nums.add(83);
@@ -96,6 +122,11 @@ int main(int argc, char*argv[]){
 
 	nums.display();
 
-	cout << nums.size() << endl;
+	cout << "REMOVING A NODE" << endl;
+
+	nums.remove(11);
+
+	nums.display();
+
 	return 0;
 }
