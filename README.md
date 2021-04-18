@@ -13,6 +13,10 @@
 
 A linked list is a data structure that consists of a linear collection of nodes where a single node will point to one other node, sort of like a chain. Every linked list has a special node, called the **head**, which indicates the first node of the list. Occasionally, some implementations of linked lists might also include a **tail** node, which indicates the last node of the list.
 
+### What is a node?
+
+A node can be thought of as a box that contains a value. If we were to take this literally, we could imagine a physical box, with an item inside of it, and the only way to see what our box contains is if we were to look inside of it. These are the building blocks of our linked list.
+
 ### Traversing 
 
 Due to how linked lists are formed, if you wanted to reach a specific node in the list, you would have to traverse starting from the head to each node, until the node you are on is the one you were looking for.
