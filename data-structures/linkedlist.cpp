@@ -51,6 +51,22 @@ class LinkedList{
 			}
 		}
 
+		// Adds a node to the end of the list
+		// NOTE: As we have a tail pointer, this function can be done in O(1) time.
+		// 		 Without a tail pointer, this would be done in O(n).
+		void addLast(const T& data){
+			Node<T>* newNode = new Node<T>();
+			newNode->data = data;
+			if(size() == 0){
+				head == newNode;
+				tail = newNode;
+			} else {
+				tail->next = newNode;
+				tail = newNode;
+			}
+
+		}
+
 		void display(){
 			Node<T>* current = head;
 
@@ -105,7 +121,6 @@ int main(int argc, char*argv[]){
 
 	// cout << "Enter a name: ";
 	// cin >> name; 
-
 	// test.add(name);
 
 	test.display();
@@ -124,7 +139,13 @@ int main(int argc, char*argv[]){
 
 	cout << "REMOVING A NODE" << endl;
 
-	nums.remove(11);
+	nums.remove(91);
+
+	nums.display();
+
+	cout << "ADDING NODE TO END OF LIST" << endl;
+
+	nums.addLast(79);
 
 	nums.display();
 
