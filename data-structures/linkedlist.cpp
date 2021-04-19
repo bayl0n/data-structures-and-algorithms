@@ -138,11 +138,11 @@ int main(int argc, char*argv[]){
 	test.addLast("Teddy");
 	test.display();
 
-	string name; 
-	cout << "Enter a name: ";
-	cin >> name; 
-	test.add(name);
-	test.display();
+	// string name; 
+	// cout << "Enter a name: ";
+	// cin >> name; 
+	// test.add(name);
+	// test.display();
 
 	// LinkedList<int> nums;
 
