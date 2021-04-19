@@ -53,7 +53,7 @@ class LinkedList{
 
 		// Adds a node to the end of the list
 		// NOTE: As we have a tail pointer, this function can be done in O(1) time.
-		// 		 Without a tail pointer, this would be done in O(n).
+		// Without a tail pointer, this would be done in O(n).
 		void addLast(const T& data){
 			Node<T>* newNode = new Node<T>();
 			newNode->data = data;
@@ -91,7 +91,8 @@ class LinkedList{
 				head = current->next;
 			} else {
 				while(previous->next->data != data){
-					if(previous->next->next == NULL) throw out_of_range("Node not in list.");
+					if (previous->next->next == NULL)
+						throw out_of_range("Node not in list.");
 					previous = previous->next;
 				}
 
@@ -102,6 +103,23 @@ class LinkedList{
 			// Deallocate memory of deleted node
 			free(current);
 			current = NULL;
+		}
+
+		void reverse(){
+			// Reverses linked list
+
+			Node<T>* current = head;
+			Node<T>* previous = NULL;
+			Node<T>* next = NULL;
+
+			tail = current;
+			while(current != NULL){
+				next = current->next;
+				current->next = previous;
+				previous = current;
+				current = next;
+			}
+			head = previous;
 		}
 };
 
@@ -117,37 +135,38 @@ int main(int argc, char*argv[]){
 
 	test.display();
 
-	string name;
+	test.reverse();
+	test.add("Elon");
+	test.display();
+
+	// string name;
 
 	// cout << "Enter a name: ";
 	// cin >> name; 
 	// test.add(name);
 
-	test.display();
+	// LinkedList<int> nums;
 
-	LinkedList<int> nums;
+	// nums.add(43);
+	// nums.add(83);
+	// nums.add(31);
+	// nums.add(91);
+	// nums.add(53);
+	// nums.add(38);
+	// nums.add(11);
+	// nums.display();
 
-	nums.add(43);
-	nums.add(83);
-	nums.add(31);
-	nums.add(91);
-	nums.add(53);
-	nums.add(38);
-	nums.add(11);
+	// cout << "REMOVING A NODE" << endl;
+	// nums.remove(91);
+	// nums.display();
 
-	nums.display();
+	// cout << "ADDING NODE TO END OF LIST" << endl;
+	// nums.addLast(79);
+	// nums.display();
 
-	cout << "REMOVING A NODE" << endl;
-
-	nums.remove(91);
-
-	nums.display();
-
-	cout << "ADDING NODE TO END OF LIST" << endl;
-
-	nums.addLast(79);
-
-	nums.display();
+	// cout << "REVERSING LINKED LIST" << endl;
+	// nums.reverse();
+	// nums.display();
 
 	return 0;
 }
