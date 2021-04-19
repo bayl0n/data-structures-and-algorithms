@@ -8,9 +8,9 @@ template <typename T>
 class Node{
 	public:
 		T data;
-		Node* next;
+		Node<T>* next;
 
-		Node(){
+		Node<T>(){
 			next = NULL;
 		}
 };
@@ -99,7 +99,6 @@ class LinkedList{
 				current = previous->next;
 				previous->next = current->next;
 			}
-
 			// Deallocate memory of deleted node
 			free(current);
 			current = NULL;
@@ -107,7 +106,6 @@ class LinkedList{
 
 		void reverse(){
 			// Reverses linked list
-
 			Node<T>* current = head;
 			Node<T>* previous = NULL;
 			Node<T>* next = NULL;
@@ -137,13 +135,14 @@ int main(int argc, char*argv[]){
 
 	test.reverse();
 	test.add("Elon");
+	test.addLast("Teddy");
 	test.display();
 
-	// string name;
-
-	// cout << "Enter a name: ";
-	// cin >> name; 
-	// test.add(name);
+	string name; 
+	cout << "Enter a name: ";
+	cin >> name; 
+	test.add(name);
+	test.display();
 
 	// LinkedList<int> nums;
 
